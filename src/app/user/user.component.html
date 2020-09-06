@@ -1,14 +1,7 @@
-<div class="container">
-    <div class="row mb-2 mt-2 text-center">
-      <div class="col-md-4">
-      </div>
-      <div class="col-md-4">
-        <h5>User Management Portal</h5>
-        <small *ngIf="titleAction$ | async as title">{{ title }}</small>
-      </div>
-      <div class="col-md-4">
-      </div>
-    </div>
+<button (click)="onLogOut()" class="btn btn-block btn-secondary">
+  <span>Logout</span>
+  <i class="fas fa-sign-in-alt ml-1"></i>
+</button>
   
     <!-- nav bar -->
     <nav class="navbar navbar-expand-md breadcrumb">

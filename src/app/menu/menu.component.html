@@ -1,19 +1,14 @@
-<div class="body-nav body-nav-horizontal">
-    <div class="container">
+<div class="body-nav body-nav-horizontal" *ngIf="isLoggedIn">
+    <div class="container" >
         <ul>
             <li>
                 <a href="#">
-                    <i class="icon-dashboard icon-large"></i> Dashboard
+                    <i class="icon-dashboard icon-large"></i> Admin
                 </a>
             </li>
             <li>
                 <a href="#">
                     <i class="icon-calendar icon-large"></i> Schedule
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="icon-map-marker icon-large"></i> Map It
                 </a>
             </li>
             <li>

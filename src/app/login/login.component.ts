@@ -16,13 +16,10 @@ import { HeaderType } from '../enum/header-type.enum';
 export class LoginComponent implements OnInit, OnDestroy {
   public showLoading: boolean;
   private subscriptions: Subscription[] = [];
-  
-
+ 
   constructor(private router: Router, private authenticationService: AuthenticationService,
               private notificationService: NotificationService) {}
 
-    
-            
   ngOnInit(): void {
     if (this.authenticationService.isUserLoggedIn()) {
       this.router.navigateByUrl('/user/management');

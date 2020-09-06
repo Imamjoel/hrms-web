@@ -6,14 +6,21 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
           </button>
-          <a href="dashboard.html" class="brand"><i class="icon-sitemap"> HRMS</i></a>
+          <a href="dashboard.html" class="brand"><i class="icon-sitemap"> HRMS </i></a>
           <div id="app-nav-top-bar" class="nav-collapse">
-              
+            <ul class="nav">                           
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><div *ngIf="user?.lastLoginDateDisplay !== null" class="text-muted"><small> login by :
+                        {{user?.firstName}} {{user?.lastName}}</small></div>
+                    </a>
+                </li>
+            </ul>
+                
               <ul class="nav pull-right">
                   <li>
-                      <a href="login.html">Logout</a>
-                  </li>
-                  
+                    <div *ngIf="user?.lastLoginDateDisplay !== null" class="text-muted"><small>Last login:
+                        {{user?.lastLoginDateDisplay}} | {{user?.joinDate | date:'medium'}}</small></div>
+                </li>
               </ul>
           </div>
       </div>

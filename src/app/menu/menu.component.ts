@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../service/authentication.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
-  constructor() { }
+  isLoggedIn :boolean;
+  constructor( private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
+     if (this.authenticationService.isUserLoggedIn()) {
+      this.isLoggedIn = true;
+    } else {
+      this.isLoggedIn = false;
+    }
+
   }
 
 }
