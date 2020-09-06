@@ -6,6 +6,7 @@ import { NotificationService } from '../service/notification.service';
 import { AuthenticationService } from '../service/authentication.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
+import { NotificationType } from '../enum/notification-type.enum';
 
 @Component({
   selector: 'app-navbar',
@@ -43,6 +44,20 @@ export class NavbarComponent implements OnInit {
         }
       )
     );
-
   }
+
+  public onLogOut(): void {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
+    this.sendNotification(NotificationType.SUCCESS, `You've been successfully logged out`);
+  }
+
+  private sendNotification(notificationType: NotificationType, message: string): void {
+    if (message) {
+      this.notificationService.notify(notificationType, message);
+    } else {
+      this.notificationService.notify(notificationType, 'An error occurred. Please try again.');
+    }
+  }
+
 }

@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
   <app-menu></app-menu>
   <router-outlet></router-outlet>
   <notifier-container></notifier-container>
-
   `,
   styleUrls: ['./app.component.css']
 })
